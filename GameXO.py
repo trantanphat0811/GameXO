@@ -1,182 +1,2759 @@
+import random
 from tkinter import *
 from tkinter import messagebox
-import random
-
 root = Tk()
-root.title('Game Caro 6x6 Minimax')
+root.title('OX Game 8X8')
+
 clicked = True
 count = 0
-player_vs_computer = False  
-player1_score = 0
-player2_score = 0
-player_turn = True  
+win = False
 def disableButtons():
-    for button in buttons:
-        button.config(state=DISABLED)
-
-def updateStatus():
-    if player_vs_computer:
-        status_text.set("Lượt người chơi" if player_turn else "Đến lượt máy")  
-    else:
-        status_text.set("Người chơi 1" if clicked else "Người chơi 2")
-
+    button1.config(state=DISABLED)
+    button2.config(state=DISABLED)
+    button3.config(state=DISABLED)
+    button4.config(state=DISABLED)
+    button5.config(state=DISABLED)
+    button6.config(state=DISABLED)
+    button7.config(state=DISABLED)
+    button8.config(state=DISABLED)
+    button9.config(state=DISABLED)
+    button10.config(state=DISABLED)
+    button11.config(state=DISABLED)
+    button12.config(state=DISABLED)
+    button13.config(state=DISABLED)
+    button14.config(state=DISABLED)
+    button15.config(state=DISABLED)
+    button16.config(state=DISABLED)
+    button17.config(state=DISABLED)
+    button18.config(state=DISABLED)
+    button19.config(state=DISABLED)
+    button20.config(state=DISABLED)
+    button21.config(state=DISABLED)
+    button22.config(state=DISABLED)
+    button23.config(state=DISABLED)
+    button24.config(state=DISABLED)
+    button25.config(state=DISABLED)
+    button26.config(state=DISABLED)
+    button27.config(state=DISABLED)
+    button28.config(state=DISABLED)
+    button29.config(state=DISABLED)
+    button30.config(state=DISABLED)
+    button31.config(state=DISABLED)
+    button32.config(state=DISABLED)
+    button33.config(state=DISABLED)
+    button34.config(state=DISABLED)
+    button35.config(state=DISABLED)
+    button36.config(state=DISABLED)
+    button37.config(state=DISABLED)
+    button38.config(state=DISABLED)
+    button39.config(state=DISABLED)
+    button40.config(state=DISABLED)
+    button41.config(state=DISABLED)
+    button42.config(state=DISABLED)
+    button43.config(state=DISABLED)
+    button44.config(state=DISABLED)
+    button45.config(state=DISABLED)
+    button46.config(state=DISABLED)
+    button47.config(state=DISABLED)
+    button48.config(state=DISABLED)
+    button49.config(state=DISABLED)
+    button50.config(state=DISABLED)
+    button51.config(state=DISABLED)
+    button52.config(state=DISABLED)
+    button53.config(state=DISABLED)
+    button54.config(state=DISABLED)
+    button55.config(state=DISABLED)
+    button56.config(state=DISABLED)
+    button57.config(state=DISABLED)
+    button58.config(state=DISABLED)
+    button59.config(state=DISABLED)
+    button60.config(state=DISABLED)
+    button61.config(state=DISABLED)
+    button62.config(state=DISABLED)
+    button63.config(state=DISABLED)
+    button64.config(state=DISABLED)
 def checkWinner():
-    global win, player1_score, player2_score
+    global win
     win = False
-    for pattern in winning_patterns:
-        if all(button["text"] == "X" for button in pattern):
-            for button in pattern:
-                button.config(bg="#80ffaa")
-            win = True
-            player1_score += 1
-            updateScore()
-            messagebox.showinfo("OX Game", "X WINNER!!")
-            disableButtons()
-            return
-        elif all(button["text"] == "O" for button in pattern):
-            for button in pattern:
-                button.config(bg="#80ffaa")
-            win = True
-            player2_score += 1
-            updateScore()
-            messagebox.showinfo("OX Game", "O WINNER!!")  
-            disableButtons()
-            return
+ 
+    if button1["text"] == "X" and button2["text"] == "X" and button3["text"] == "X" and button4["text"] == "X":
+        button1.config(bg="#80ffaa") 
+        button2.config(bg="#80ffaa") 
+        button3.config(bg="#80ffaa")
+        button4.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button2["text"] == "X" and button3["text"] == "X" and button4["text"] == "X" and button5["text"] == "X":
+        button2.config(bg="#80ffaa")
+        button3.config(bg="#80ffaa") 
+        button4.config(bg="#80ffaa") 
+        button5.config(bg="#80ffaa") 
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button3["text"] == "X" and button4["text"] == "X" and button5["text"] == "X" and button6["text"] == "X":
+        button3.config(bg="#80ffaa") 
+        button4.config(bg="#80ffaa") 
+        button5.config(bg="#80ffaa") 
+        button6.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button4["text"] == "X" and button5["text"] == "X" and button6["text"] == "X" and button7["text"] == "X":
+        button4.config(bg="#80ffaa")
+        button5.config(bg="#80ffaa") 
+        button6.config(bg="#80ffaa") 
+        button7.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button5["text"] == "X" and button6["text"] == "X" and button7["text"] == "X" and button8["text"] == "X":
+        button5.config(bg="#80ffaa")
+        button6.config(bg="#80ffaa") 
+        button7.config(bg="#80ffaa") 
+        button8.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button9["text"] == "X" and button10["text"] == "X" and button11["text"] == "X" and button12["text"] == "X":
+        button9.config(bg="#80ffaa")
+        button10.config(bg="#80ffaa") 
+        button11.config(bg="#80ffaa")
+        button12.config(bg="#80ffaa") 
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button10["text"] == "X" and button11["text"] == "X" and button12["text"] == "X" and button13["text"] == "X":
+        button10.config(bg="#80ffaa") 
+        button11.config(bg="#80ffaa") 
+        button12.config(bg="#80ffaa") 
+        button13.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button11["text"] == "X" and button12["text"] == "X" and button13["text"] == "X" and button14["text"] == "X":
+        button11.config(bg="#80ffaa") 
+        button12.config(bg="#80ffaa") 
+        button13.config(bg="#80ffaa") 
+        button14.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button12["text"] == "X" and button13["text"] == "X" and button14["text"] == "X" and button15["text"] == "X":
+        button12.config(bg="#80ffaa") 
+        button13.config(bg="#80ffaa") 
+        button14.config(bg="#80ffaa") 
+        button15.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button13["text"] == "X" and button14["text"] == "X" and button15["text"] == "X" and button16["text"] == "X":
+        button13.config(bg="#80ffaa") 
+        button14.config(bg="#80ffaa") 
+        button15.config(bg="#80ffaa") 
+        button16.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button17["text"] == "X" and button18["text"] == "X" and button19["text"] == "X" and button20["text"] == "X":
+        button17.config(bg="#80ffaa") 
+        button18.config(bg="#80ffaa") 
+        button19.config(bg="#80ffaa") 
+        button20.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()   
+    elif button18["text"] == "X" and button19["text"] == "X" and button20["text"] == "X" and button21["text"] == "X":
+        button18.config(bg="#80ffaa") 
+        button19.config(bg="#80ffaa")
+        button20.config(bg="#80ffaa") 
+        button21.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button19["text"] == "X" and button20["text"] == "X" and button21["text"] == "X" and button22["text"] == "X":
+        button19.config(bg="#80ffaa") 
+        button20.config(bg="#80ffaa") 
+        button21.config(bg="#80ffaa") 
+        button22.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button20["text"] == "X" and button21["text"] == "X" and button22["text"] == "X" and button23["text"] == "X":
+        button20.config(bg="#80ffaa") 
+        button21.config(bg="#80ffaa") 
+        button12.config(bg="#80ffaa") 
+        button23.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button21["text"] == "X" and button22["text"] == "X" and button23["text"] == "X" and button24["text"] == "X":
+        button21.config(bg="#80ffaa") 
+        button22.config(bg="#80ffaa") 
+        button23.config(bg="#80ffaa") 
+        button24.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button25["text"] == "X" and button26["text"] == "X" and button27["text"] == "X" and button28["text"] == "X":
+        button25.config(bg="#80ffaa")
+        button26.config(bg="#80ffaa")
+        button27.config(bg="#80ffaa")
+        button28.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button26["text"] == "X" and button27["text"] == "X" and button28["text"] == "X" and button29["text"] == "X" :
+        button26.config(bg="#80ffaa") 
+        button27.config(bg="#80ffaa") 
+        button28.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button27["text"] == "X" and button28["text"] == "X" and button29["text"] == "X" and button30["text"] == "X" :
+        button27.config(bg="#80ffaa") 
+        button28.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa")
+        button30.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button28["text"] == "X" and button29["text"] == "X" and button30["text"] == "X" and button31["text"] == "X":
+        button28.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa") 
+        button30.config(bg="#80ffaa")
+        button31.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button29["text"] == "X" and button30["text"] == "X" and button31["text"] == "X" and button32["text"] == "X":
+        button29.config(bg="#80ffaa") 
+        button30.config(bg="#80ffaa") 
+        button31.config(bg="#80ffaa")
+        button32.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button33["text"] == "X" and button34["text"] == "X" and button35["text"] == "X" and button36["text"] == "X" :
+        button33.config(bg="#80ffaa") 
+        button34.config(bg="#80ffaa") 
+        button35.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button34["text"] == "X" and button35["text"] == "X" and button36["text"] == "X" and button37["text"] == "X" :
+        button34.config(bg="#80ffaa") 
+        button35.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button35["text"] == "X" and button36["text"] == "X" and button37["text"] == "X" and button38["text"] == "X" :
+        button35.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa") 
+        button38.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button36["text"] == "X" and button37["text"] == "X" and button38["text"] == "X" and button39["text"] == "X" :
+        button36.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa") 
+        button38.config(bg="#80ffaa") 
+        button39.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()    
+    elif button37["text"] == "X" and button38["text"] == "X" and button39["text"] == "X" and button40["text"] == "X" :
+        button37.config(bg="#80ffaa") 
+        button38.config(bg="#80ffaa") 
+        button39.config(bg="#80ffaa") 
+        button40.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button41["text"] == "X" and button42["text"] == "X" and button43["text"] == "X" and button44["text"] == "X" :
+        button41.config(bg="#80ffaa") 
+        button42.config(bg="#80ffaa") 
+        button43.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button42["text"] == "X" and button43["text"] == "X" and button44["text"] == "X" and button45["text"] == "X" :
+        button42.config(bg="#80ffaa") 
+        button43.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa") 
+        button45.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button43["text"] == "X" and button44["text"] == "X" and button45["text"] == "X" and button46["text"] == "X" :
+        button43.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa") 
+        button45.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button44["text"] == "X" and button45["text"] == "X" and button46["text"] == "X" and button47["text"] == "X" :
+        button44.config(bg="#80ffaa") 
+        button45.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa") 
+        button47.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button45["text"] == "X" and button46["text"] == "X" and button47["text"] == "X" and button48["text"] == "X" :
+        button45.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa") 
+        button47.config(bg="#80ffaa") 
+        button48.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button49["text"] == "X" and button50["text"] == "X" and button51["text"] == "X" and button52["text"] == "X" :
+        button49.config(bg="#80ffaa") 
+        button50.config(bg="#80ffaa") 
+        button51.config(bg="#80ffaa") 
+        button52.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button50["text"] == "X" and button51["text"] == "X" and button52["text"] == "X" and button53["text"] == "X" :
+        button50.config(bg="#80ffaa") 
+        button51.config(bg="#80ffaa") 
+        button52.config(bg="#80ffaa") 
+        button53.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button51["text"] == "X" and button52["text"] == "X" and button53["text"] == "X" and button54["text"] == "X" :
+        button51.config(bg="#80ffaa") 
+        button52.config(bg="#80ffaa") 
+        button53.config(bg="#80ffaa") 
+        button54.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button52["text"] == "X" and button53["text"] == "X" and button54["text"] == "X" and button55["text"] == "X" :
+        button52.config(bg="#80ffaa") 
+        button53.config(bg="#80ffaa") 
+        button54.config(bg="#80ffaa") 
+        button55.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button53["text"] == "X" and button54["text"] == "X" and button55["text"] == "X" and button56["text"] == "X" :
+        button53.config(bg="#80ffaa") 
+        button54.config(bg="#80ffaa") 
+        button55.config(bg="#80ffaa") 
+        button56.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button57["text"] == "X" and button58["text"] == "X" and button59["text"] == "X" and button60["text"] == "X" :
+        button57.config(bg="#80ffaa") 
+        button58.config(bg="#80ffaa") 
+        button59.config(bg="#80ffaa") 
+        button60.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button58["text"] == "X" and button59["text"] == "X" and button60["text"] == "X" and button61["text"] == "X" :
+        button58.config(bg="#80ffaa") 
+        button59.config(bg="#80ffaa") 
+        button60.config(bg="#80ffaa") 
+        button61.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button59["text"] == "X" and button60["text"] == "X" and button61["text"] == "X" and button62["text"] == "X" :
+        button59.config(bg="#80ffaa") 
+        button60.config(bg="#80ffaa") 
+        button61.config(bg="#80ffaa") 
+        button62.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button60["text"] == "X" and button61["text"] == "X" and button62["text"] == "X" and button63["text"] == "X" :
+        button60.config(bg="#80ffaa") 
+        button61.config(bg="#80ffaa") 
+        button62.config(bg="#80ffaa") 
+        button63.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button61["text"] == "X" and button62["text"] == "X" and button63["text"] == "X" and button64["text"] == "X" :
+        button61.config(bg="#80ffaa") 
+        button62.config(bg="#80ffaa") 
+        button63.config(bg="#80ffaa") 
+        button64.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button1["text"] == "X" and button9["text"] == "X" and button17["text"] == "X" and button25["text"] == "X" :
+        button1.config(bg="#80ffaa") 
+        button9.config(bg="#80ffaa") 
+        button17.config(bg="#80ffaa") 
+        button25.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button9["text"] == "X" and button17["text"] == "X" and button25["text"] == "X" and button33["text"] == "X" :
+        button9.config(bg="#80ffaa") 
+        button17.config(bg="#80ffaa") 
+        button25.config(bg="#80ffaa") 
+        button33.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button17["text"] == "X" and button25["text"] == "X" and button33["text"] == "X" and button41["text"] == "X" :
+        button17.config(bg="#80ffaa") 
+        button25.config(bg="#80ffaa") 
+        button33.config(bg="#80ffaa") 
+        button41.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button25["text"] == "X" and button33["text"] == "X" and button41["text"] == "X" and button49["text"] == "X" :
+        button25.config(bg="#80ffaa") 
+        button33.config(bg="#80ffaa") 
+        button41.config(bg="#80ffaa") 
+        button49.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button33["text"] == "X" and button41["text"] == "X" and button49["text"] == "X" and button57["text"] == "X":
+        button33.config(bg="#80ffaa") 
+        button41.config(bg="#80ffaa") 
+        button49.config(bg="#80ffaa") 
+        button57.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button2["text"] == "X" and button10["text"] == "X" and button18["text"] == "X" and button26["text"] == "X":
+        button2.config(bg="#80ffaa") 
+        button10.config(bg="#80ffaa") 
+        button18.config(bg="#80ffaa") 
+        button26.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button10["text"] == "X" and button18["text"] == "X" and button26["text"] == "X" and button34["text"] == "X":
+        button10.config(bg="#80ffaa") 
+        button18.config(bg="#80ffaa") 
+        button26.config(bg="#80ffaa") 
+        button34.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()   
+    
+    elif button18["text"] == "X" and button26["text"] == "X" and button34["text"] == "X" and button42["text"] == "X":
+        button18.config(bg="#80ffaa") 
+        button26.config(bg="#80ffaa") 
+        button34.config(bg="#80ffaa") 
+        button42.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button26["text"] == "X" and button34["text"] == "X" and button42["text"] == "X" and button50["text"] == "X":
+        button26.config(bg="#80ffaa") 
+        button34.config(bg="#80ffaa") 
+        button42.config(bg="#80ffaa") 
+        button50.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button34["text"] == "X" and button42["text"] == "X" and button50["text"] == "X" and button58["text"] == "X":
+        button34.config(bg="#80ffaa") 
+        button42.config(bg="#80ffaa") 
+        button50.config(bg="#80ffaa") 
+        button58.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()   
+    elif button3["text"] == "X" and button11["text"] == "X" and button19["text"] == "X" and button27["text"] == "X":
+        button3.config(bg="#80ffaa") 
+        button11.config(bg="#80ffaa") 
+        button19.config(bg="#80ffaa") 
+        button27.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button11["text"] == "X" and button19["text"] == "X" and button27["text"] == "X" and button35["text"] == "X":
+        button11.config(bg="#80ffaa") 
+        button19.config(bg="#80ffaa") 
+        button27.config(bg="#80ffaa") 
+        button35.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button19["text"] == "X" and button27["text"] == "X" and button35["text"] == "X" and button43["text"] == "X":
+        button19.config(bg="#80ffaa") 
+        button27.config(bg="#80ffaa") 
+        button35.config(bg="#80ffaa") 
+        button43.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()   
+    elif button27["text"] == "X" and button35["text"] == "X" and button43["text"] == "X" and button51["text"] == "X":
+        button27.config(bg="#80ffaa") 
+        button35.config(bg="#80ffaa") 
+        button43.config(bg="#80ffaa") 
+        button51.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button35["text"] == "X" and button43["text"] == "X" and button51["text"] == "X" and button59["text"] == "X":
+        button35.config(bg="#80ffaa") 
+        button43.config(bg="#80ffaa") 
+        button51.config(bg="#80ffaa") 
+        button59.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button4["text"] == "X" and button12["text"] == "X" and button20["text"] == "X" and button28["text"] == "X":
+        button4.config(bg="#80ffaa") 
+        button12.config(bg="#80ffaa") 
+        button20.config(bg="#80ffaa") 
+        button28.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()   
 
+    elif button12["text"] == "X" and button20["text"] == "X" and button28["text"] == "X" and button36["text"] == "X":
+        button12.config(bg="#80ffaa") 
+        button20.config(bg="#80ffaa") 
+        button28.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button20["text"] == "X" and button28["text"] == "X" and button36["text"] == "X" and button44["text"] == "X":
+        button20.config(bg="#80ffaa") 
+        button28.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button28["text"] == "X" and button36["text"] == "X" and button44["text"] == "X" and button52["text"] == "X":
+        button28.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa") 
+        button52.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()   
+    elif button36["text"] == "X" and button44["text"] == "X" and button52["text"] == "X" and button60["text"] == "X":
+        button36.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa") 
+        button52.config(bg="#80ffaa") 
+        button60.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button5["text"] == "X" and button13["text"] == "X" and button21["text"] == "X" and button29["text"] == "X":
+        button5.config(bg="#80ffaa") 
+        button13.config(bg="#80ffaa") 
+        button21.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button13["text"] == "X" and button21["text"] == "X" and button29["text"] == "X" and button37["text"] == "X":
+        button13.config(bg="#80ffaa") 
+        button21.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button21["text"] == "X" and button29["text"] == "X" and button37["text"] == "X" and button45["text"] == "X":
+        button21.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa") 
+        button45.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button29["text"] == "X" and button37["text"] == "X" and button45["text"] == "X" and button53["text"] == "X":
+        button29.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa") 
+        button45.config(bg="#80ffaa") 
+        button53.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons
+        start()
+    elif button6["text"] == "X" and button14["text"] == "X" and button22["text"] == "X" and button30["text"] == "X":
+        button6.config(bg="#80ffaa") 
+        button14.config(bg="#80ffaa") 
+        button22.config(bg="#80ffaa") 
+        button30.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button14["text"] == "X" and button22["text"] == "X" and button30["text"] == "X" and button38["text"] == "X":
+        button14.config(bg="#80ffaa") 
+        button22.config(bg="#80ffaa") 
+        button30.config(bg="#80ffaa") 
+        button38.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button22["text"] == "X" and button30["text"] == "X" and button38["text"] == "X" and button46["text"] == "X":
+        button22.config(bg="#80ffaa") 
+        button30.config(bg="#80ffaa") 
+        button38.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button30["text"] == "X" and button38["text"] == "X" and button46["text"] == "X" and button54["text"] == "X":
+        button30.config(bg="#80ffaa") 
+        button38.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa") 
+        button54.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button38["text"] == "X" and button46["text"] == "X" and button54["text"] == "X" and button62["text"] == "X":
+        button38.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa") 
+        button54.config(bg="#80ffaa") 
+        button62.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button7["text"] == "X" and button15["text"] == "X" and button23["text"] == "X" and button31["text"] == "X":
+        button7.config(bg="#80ffaa") 
+        button15.config(bg="#80ffaa") 
+        button23.config(bg="#80ffaa") 
+        button31.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button15["text"] == "X" and button23["text"] == "X" and button31["text"] == "X" and button39["text"] == "X":
+        button15.config(bg="#80ffaa") 
+        button23.config(bg="#80ffaa") 
+        button31.config(bg="#80ffaa") 
+        button39.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button23["text"] == "X" and button31["text"] == "X" and button39["text"] == "X" and button47["text"] == "X":
+        button23.config(bg="#80ffaa") 
+        button31.config(bg="#80ffaa") 
+        button39.config(bg="#80ffaa") 
+        button47.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button31["text"] == "X" and button39["text"] == "X" and button47["text"] == "X" and button55["text"] == "X":
+        button31.config(bg="#80ffaa") 
+        button39.config(bg="#80ffaa") 
+        button47.config(bg="#80ffaa") 
+        button55.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button39["text"] == "X" and button47["text"] == "X" and button55["text"] == "X" and button63["text"] == "X":
+        button39.config(bg="#80ffaa") 
+        button47.config(bg="#80ffaa") 
+        button55.config(bg="#80ffaa") 
+        button63.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button8["text"] == "X" and button16["text"] == "X" and button24["text"] == "X" and button32["text"] == "X":
+        button8.config(bg="#80ffaa") 
+        button16.config(bg="#80ffaa") 
+        button24.config(bg="#80ffaa") 
+        button32.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button16["text"] == "X" and button24["text"] == "X" and button32["text"] == "X" and button40["text"] == "X":
+        button16.config(bg="#80ffaa") 
+        button24.config(bg="#80ffaa") 
+        button32.config(bg="#80ffaa") 
+        button40.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button24["text"] == "X" and button32["text"] == "X" and button40["text"] == "X" and button48["text"] == "X":
+        button24.config(bg="#80ffaa") 
+        button32.config(bg="#80ffaa") 
+        button40.config(bg="#80ffaa") 
+        button48.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button32["text"] == "X" and button40["text"] == "X" and button48["text"] == "X" and button56["text"] == "X":
+        button32.config(bg="#80ffaa") 
+        button40.config(bg="#80ffaa") 
+        button48.config(bg="#80ffaa") 
+        button56.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button40["text"] == "X" and button48["text"] == "X" and button56["text"] == "X" and button64["text"] == "X":
+        button40.config(bg="#80ffaa") 
+        button48.config(bg="#80ffaa") 
+        button56.config(bg="#80ffaa") 
+        button64.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button1["text"] == "X" and button10["text"] == "X" and button19["text"] == "X" and button28["text"] == "X":
+        button1.config(bg="#80ffaa") 
+        button10.config(bg="#80ffaa") 
+        button19.config(bg="#80ffaa") 
+        button28.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button10["text"] == "X" and button19["text"] == "X" and button28["text"] == "X" and button37["text"] == "X":
+        button10.config(bg="#80ffaa") 
+        button19.config(bg="#80ffaa") 
+        button28.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button19["text"] == "X" and button28["text"] == "X" and button37["text"] == "X" and button46["text"] == "X":
+        button19.config(bg="#80ffaa") 
+        button28.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button28["text"] == "X" and button37["text"] == "X" and button46["text"] == "X" and button55["text"] == "X":
+        button28.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa") 
+        button55.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button37["text"] == "X" and button46["text"] == "X" and button55["text"] == "X" and button64["text"] == "X":
+        button37.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa") 
+        button55.config(bg="#80ffaa") 
+        button64.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button37["text"] == "X" and button46["text"] == "X" and button55["text"] == "X" and button64["text"] == "X":
+        button37.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa") 
+        button55.config(bg="#80ffaa") 
+        button64.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button2["text"] == "X" and button11["text"] == "X" and button20["text"] == "X" and button29["text"] == "X":
+        button2.config(bg="#80ffaa") 
+        button11.config(bg="#80ffaa") 
+        button20.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button11["text"] == "X" and button20["text"] == "X" and button29["text"] == "X" and button38["text"] == "X":
+        button11.config(bg="#80ffaa") 
+        button20.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa") 
+        button38.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button20["text"] == "X" and button29["text"] == "X" and button38["text"] == "X" and button47["text"] == "X":
+        button20.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa") 
+        button38.config(bg="#80ffaa") 
+        button47.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button29["text"] == "X" and button38["text"] == "X" and button47["text"] == "X" and button56["text"] == "X":
+        button29.config(bg="#80ffaa") 
+        button38.config(bg="#80ffaa") 
+        button47.config(bg="#80ffaa") 
+        button56.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button3["text"] == "X" and button12["text"] == "X" and button21["text"] == "X" and button30["text"] == "X":
+        button3.config(bg="#80ffaa") 
+        button12.config(bg="#80ffaa") 
+        button21.config(bg="#80ffaa") 
+        button30.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button12["text"] == "X" and button21["text"] == "X" and button30["text"] == "X" and button39["text"] == "X":
+        button12.config(bg="#80ffaa") 
+        button21.config(bg="#80ffaa") 
+        button30.config(bg="#80ffaa") 
+        button39.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button21["text"] == "X" and button30["text"] == "X" and button39["text"] == "X" and button48["text"] == "X":
+        button21.config(bg="#80ffaa") 
+        button30.config(bg="#80ffaa") 
+        button39.config(bg="#80ffaa") 
+        button48.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button4["text"] == "X" and button13["text"] == "X" and button22["text"] == "X" and button31["text"] == "X":
+        button4.config(bg="#80ffaa") 
+        button13.config(bg="#80ffaa") 
+        button22.config(bg="#80ffaa") 
+        button31.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button13["text"] == "X" and button22["text"] == "X" and button31["text"] == "X" and button40["text"] == "X":
+        button13.config(bg="#80ffaa") 
+        button22.config(bg="#80ffaa") 
+        button31.config(bg="#80ffaa") 
+        button40.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button5["text"] == "X" and button14["text"] == "X" and button23["text"] == "X" and button32["text"] == "X":
+        button5.config(bg="#80ffaa") 
+        button14.config(bg="#80ffaa") 
+        button23.config(bg="#80ffaa") 
+        button32.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button8["text"] == "X" and button15["text"] == "X" and button22["text"] == "X" and button29["text"] == "X":
+        button8.config(bg="#80ffaa") 
+        button15.config(bg="#80ffaa") 
+        button22.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button15["text"] == "X" and button22["text"] == "X" and button29["text"] == "X" and button36["text"] == "X":
+        button15.config(bg="#80ffaa") 
+        button22.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button22["text"] == "X" and button29["text"] == "X" and button36["text"] == "X" and button43["text"] == "X":
+        button22.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa") 
+        button43.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button29["text"] == "X" and button36["text"] == "X" and button43["text"] == "X" and button50["text"] == "X":
+        button29.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa") 
+        button43.config(bg="#80ffaa") 
+        button50.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button36["text"] == "X" and button43["text"] == "X" and button50["text"] == "X" and button57["text"] == "X":
+        button36.config(bg="#80ffaa") 
+        button43.config(bg="#80ffaa") 
+        button50.config(bg="#80ffaa") 
+        button57.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button7["text"] == "X" and button14["text"] == "X" and button21["text"] == "X" and button28["text"] == "X":
+        button7.config(bg="#80ffaa") 
+        button14.config(bg="#80ffaa") 
+        button21.config(bg="#80ffaa") 
+        button28.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button14["text"] == "X" and button21["text"] == "X" and button28["text"] == "X" and button35["text"] == "X":
+        button14.config(bg="#80ffaa") 
+        button21.config(bg="#80ffaa") 
+        button28.config(bg="#80ffaa") 
+        button35.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button21["text"] == "X" and button28["text"] == "X" and button35["text"] == "X" and button42["text"] == "X":
+        button21.config(bg="#80ffaa") 
+        button28.config(bg="#80ffaa") 
+        button35.config(bg="#80ffaa") 
+        button42.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button28["text"] == "X" and button35["text"] == "X" and button42["text"] == "X" and button49["text"] == "X":
+        button28.config(bg="#80ffaa") 
+        button35.config(bg="#80ffaa") 
+        button42.config(bg="#80ffaa") 
+        button49.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button6["text"] == "X" and button13["text"] == "X" and button20["text"] == "X" and button27["text"] == "X":
+        button6.config(bg="#80ffaa") 
+        button13.config(bg="#80ffaa") 
+        button20.config(bg="#80ffaa") 
+        button27.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button13["text"] == "X" and button20["text"] == "X" and button27["text"] == "X" and button34["text"] == "X":
+        button13.config(bg="#80ffaa") 
+        button20.config(bg="#80ffaa") 
+        button27.config(bg="#80ffaa") 
+        button34.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button20["text"] == "X" and button27["text"] == "X" and button34["text"] == "X" and button41["text"] == "X":
+        button20.config(bg="#80ffaa") 
+        button27.config(bg="#80ffaa") 
+        button34.config(bg="#80ffaa") 
+        button41.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button5["text"] == "X" and button12["text"] == "X" and button19["text"] == "X" and button26["text"] == "X":
+        button5.config(bg="#80ffaa") 
+        button12.config(bg="#80ffaa") 
+        button19.config(bg="#80ffaa") 
+        button26.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button12["text"] == "X" and button19["text"] == "X" and button26["text"] == "X" and button33["text"] == "X":
+        button12.config(bg="#80ffaa") 
+        button19.config(bg="#80ffaa") 
+        button26.config(bg="#80ffaa") 
+        button33.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button4["text"] == "X" and button11["text"] == "X" and button18["text"] == "X" and button25["text"] == "X":
+        button4.config(bg="#80ffaa") 
+        button11.config(bg="#80ffaa") 
+        button18.config(bg="#80ffaa") 
+        button25.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button9["text"] == "X" and button18["text"] == "X" and button27["text"] == "X" and button36["text"] == "X":
+        button9.config(bg="#80ffaa") 
+        button18.config(bg="#80ffaa") 
+        button27.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button18["text"] == "X" and button27["text"] == "X" and button36["text"] == "X" and button45["text"] == "X":
+        button18.config(bg="#80ffaa") 
+        button27.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa") 
+        button45.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button27["text"] == "X" and button36["text"] == "X" and button45["text"] == "X" and button54["text"] == "X":
+        button27.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa") 
+        button45.config(bg="#80ffaa") 
+        button54.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button36["text"] == "X" and button45["text"] == "X" and button54["text"] == "X" and button63["text"] == "X":
+        button36.config(bg="#80ffaa") 
+        button45.config(bg="#80ffaa") 
+        button54.config(bg="#80ffaa") 
+        button63.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button17["text"] == "X" and button26["text"] == "X" and button35["text"] == "X" and button44["text"] == "X":
+        button17.config(bg="#80ffaa") 
+        button26.config(bg="#80ffaa") 
+        button35.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button26["text"] == "X" and button35["text"] == "X" and button44["text"] == "X" and button53["text"] == "X":
+        button26.config(bg="#80ffaa") 
+        button35.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa") 
+        button53.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button35["text"] == "X" and button44["text"] == "X" and button53["text"] == "X" and button62["text"] == "X":
+        button35.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa") 
+        button53.config(bg="#80ffaa") 
+        button62.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button25["text"] == "X" and button34["text"] == "X" and button43["text"] == "X" and button52["text"] == "X":
+        button25.config(bg="#80ffaa") 
+        button34.config(bg="#80ffaa") 
+        button43.config(bg="#80ffaa") 
+        button52.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button34["text"] == "X" and button43["text"] == "X" and button52["text"] == "X" and button61["text"] == "X":
+        button34.config(bg="#80ffaa") 
+        button43.config(bg="#80ffaa") 
+        button52.config(bg="#80ffaa") 
+        button61.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button16["text"] == "X" and button23["text"] == "X" and button30["text"] == "X" and button37["text"] == "X":
+        button16.config(bg="#80ffaa") 
+        button23.config(bg="#80ffaa") 
+        button30.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button23["text"] == "X" and button30["text"] == "X" and button37["text"] == "X" and button44["text"] == "X":
+        button23.config(bg="#80ffaa") 
+        button30.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button30["text"] == "X" and button37["text"] == "X" and button44["text"] == "X" and button51["text"] == "X":
+        button30.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa") 
+        button51.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button37["text"] == "X" and button44["text"] == "X" and button51["text"] == "X" and button58["text"] == "X":
+        button37.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa") 
+        button51.config(bg="#80ffaa") 
+        button58.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button24["text"] == "X" and button31["text"] == "X" and button38["text"] == "X" and button45["text"] == "X":
+        button24.config(bg="#80ffaa") 
+        button31.config(bg="#80ffaa") 
+        button38.config(bg="#80ffaa") 
+        button45.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button31["text"] == "X" and button38["text"] == "X" and button45["text"] == "X" and button52["text"] == "X":
+        button31.config(bg="#80ffaa") 
+        button38.config(bg="#80ffaa") 
+        button45.config(bg="#80ffaa") 
+        button52.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button38["text"] == "X" and button45["text"] == "X" and button52["text"] == "X" and button59["text"] == "X":
+        button38.config(bg="#80ffaa") 
+        button45.config(bg="#80ffaa") 
+        button52.config(bg="#80ffaa") 
+        button59.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button32["text"] == "X" and button39["text"] == "X" and button46["text"] == "X" and button53["text"] == "X":
+        button32.config(bg="#80ffaa") 
+        button39.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa") 
+        button53.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button39["text"] == "X" and button46["text"] == "X" and button53["text"] == "X" and button60["text"] == "X":
+        button39.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa") 
+        button53.config(bg="#80ffaa") 
+        button60.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button40["text"] == "X" and button47["text"] == "X" and button54["text"] == "X" and button61["text"] == "X":
+        button40.config(bg="#80ffaa") 
+        button47.config(bg="#80ffaa") 
+        button54.config(bg="#80ffaa") 
+        button61.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+    elif button9["text"] == "X" and button18["text"] == "X" and button27["text"] == "X" and button36["text"] == "X":
+        button1.config(bg="#80ffaa") 
+        button18.config(bg="#80ffaa") 
+        button27.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "Player 1 WINNER!!")
+        disableButtons()
+        start()
+
+    if button1["text"] == "O" and button2["text"] == "O" and button3["text"] == "O" and button4["text"] == "O":
+        button1.config(bg="#80ffaa") 
+        button2.config(bg="#80ffaa") 
+        button3.config(bg="#80ffaa")
+        button4.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button2["text"] == "O" and button3["text"] == "O" and button4["text"] == "O" and button5["text"] == "O":
+        button2.config(bg="#80ffaa")
+        button3.config(bg="#80ffaa") 
+        button4.config(bg="#80ffaa") 
+        button5.config(bg="#80ffaa") 
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button3["text"] == "O" and button4["text"] == "O" and button5["text"] == "O" and button6["text"] == "O":
+        button3.config(bg="#80ffaa") 
+        button4.config(bg="#80ffaa") 
+        button5.config(bg="#80ffaa") 
+        button6.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button4["text"] == "O" and button5["text"] == "O" and button6["text"] == "O" and button7["text"] == "O":
+        button4.config(bg="#80ffaa")
+        button5.config(bg="#80ffaa") 
+        button6.config(bg="#80ffaa") 
+        button7.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button5["text"] == "O" and button6["text"] == "O" and button7["text"] == "O" and button8["text"] == "O":
+        button5.config(bg="#80ffaa")
+        button6.config(bg="#80ffaa") 
+        button7.config(bg="#80ffaa") 
+        button8.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button9["text"] == "O" and button10["text"] == "O" and button11["text"] == "O" and button12["text"] == "O":
+        button9.config(bg="#80ffaa")
+        button10.config(bg="#80ffaa") 
+        button11.config(bg="#80ffaa")
+        button12.config(bg="#80ffaa") 
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button10["text"] == "O" and button11["text"] == "O" and button12["text"] == "O" and button13["text"] == "O":
+        button10.config(bg="#80ffaa") 
+        button11.config(bg="#80ffaa") 
+        button12.config(bg="#80ffaa") 
+        button13.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button11["text"] == "O" and button12["text"] == "O" and button13["text"] == "O" and button14["text"] == "O":
+        button11.config(bg="#80ffaa") 
+        button12.config(bg="#80ffaa") 
+        button13.config(bg="#80ffaa") 
+        button14.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button12["text"] == "O" and button13["text"] == "O" and button14["text"] == "O" and button15["text"] == "O":
+        button12.config(bg="#80ffaa") 
+        button13.config(bg="#80ffaa") 
+        button14.config(bg="#80ffaa") 
+        button15.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button13["text"] == "O" and button14["text"] == "O" and button15["text"] == "O" and button16["text"] == "O":
+        button13.config(bg="#80ffaa") 
+        button14.config(bg="#80ffaa") 
+        button15.config(bg="#80ffaa") 
+        button16.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button17["text"] == "O" and button18["text"] == "O" and button19["text"] == "O" and button20["text"] == "O":
+        button17.config(bg="#80ffaa") 
+        button18.config(bg="#80ffaa") 
+        button19.config(bg="#80ffaa") 
+        button20.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()   
+    elif button18["text"] == "O" and button19["text"] == "O" and button20["text"] == "O" and button21["text"] == "O":
+        button18.config(bg="#80ffaa") 
+        button19.config(bg="#80ffaa")
+        button20.config(bg="#80ffaa") 
+        button21.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button19["text"] == "O" and button20["text"] == "O" and button21["text"] == "O" and button22["text"] == "O":
+        button19.config(bg="#80ffaa") 
+        button20.config(bg="#80ffaa") 
+        button21.config(bg="#80ffaa") 
+        button22.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button20["text"] == "O" and button21["text"] == "O" and button22["text"] == "O" and button23["text"] == "O":
+        button20.config(bg="#80ffaa") 
+        button21.config(bg="#80ffaa") 
+        button12.config(bg="#80ffaa") 
+        button23.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button21["text"] == "O" and button22["text"] == "O" and button23["text"] == "O" and button24["text"] == "O":
+        button21.config(bg="#80ffaa") 
+        button22.config(bg="#80ffaa") 
+        button23.config(bg="#80ffaa") 
+        button24.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button25["text"] == "O" and button26["text"] == "O" and button27["text"] == "O" and button28["text"] == "O":
+        button25.config(bg="#80ffaa")
+        button26.config(bg="#80ffaa")
+        button27.config(bg="#80ffaa")
+        button28.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button26["text"] == "O" and button27["text"] == "O" and button28["text"] == "O" and button29["text"] == "O" :
+        button26.config(bg="#80ffaa") 
+        button27.config(bg="#80ffaa") 
+        button28.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button27["text"] == "O" and button28["text"] == "O" and button29["text"] == "O" and button30["text"] == "O" :
+        button27.config(bg="#80ffaa") 
+        button28.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa")
+        button30.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button28["text"] == "O" and button29["text"] == "O" and button30["text"] == "O" and button31["text"] == "O":
+        button28.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa") 
+        button30.config(bg="#80ffaa")
+        button31.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button29["text"] == "O" and button30["text"] == "O" and button31["text"] == "O" and button32["text"] == "O":
+        button29.config(bg="#80ffaa") 
+        button30.config(bg="#80ffaa") 
+        button31.config(bg="#80ffaa")
+        button32.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button33["text"] == "O" and button34["text"] == "O" and button35["text"] == "O" and button36["text"] == "O" :
+        button33.config(bg="#80ffaa") 
+        button34.config(bg="#80ffaa") 
+        button35.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button34["text"] == "O" and button35["text"] == "O" and button36["text"] == "O" and button37["text"] == "O" :
+        button34.config(bg="#80ffaa") 
+        button35.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button35["text"] == "O" and button36["text"] == "O" and button37["text"] == "O" and button38["text"] == "O" :
+        button35.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa") 
+        button38.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button36["text"] == "O" and button37["text"] == "O" and button38["text"] == "O" and button39["text"] == "O" :
+        button36.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa") 
+        button38.config(bg="#80ffaa") 
+        button39.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()    
+    elif button37["text"] == "O" and button38["text"] == "O" and button39["text"] == "O" and button40["text"] == "O" :
+        button37.config(bg="#80ffaa") 
+        button38.config(bg="#80ffaa") 
+        button39.config(bg="#80ffaa") 
+        button40.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button41["text"] == "O" and button42["text"] == "O" and button43["text"] == "O" and button44["text"] == "O" :
+        button41.config(bg="#80ffaa") 
+        button42.config(bg="#80ffaa") 
+        button43.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button42["text"] == "O" and button43["text"] == "O" and button44["text"] == "O" and button45["text"] == "O" :
+        button42.config(bg="#80ffaa") 
+        button43.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa") 
+        button45.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button43["text"] == "O" and button44["text"] == "O" and button45["text"] == "O" and button46["text"] == "O" :
+        button43.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa") 
+        button45.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button44["text"] == "O" and button45["text"] == "O" and button46["text"] == "O" and button47["text"] == "O" :
+        button44.config(bg="#80ffaa") 
+        button45.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa") 
+        button47.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button45["text"] == "O" and button46["text"] == "O" and button47["text"] == "O" and button48["text"] == "O" :
+        button45.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa") 
+        button47.config(bg="#80ffaa") 
+        button48.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button49["text"] == "O" and button50["text"] == "O" and button51["text"] == "O" and button52["text"] == "O" :
+        button49.config(bg="#80ffaa") 
+        button50.config(bg="#80ffaa") 
+        button51.config(bg="#80ffaa") 
+        button52.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button50["text"] == "O" and button51["text"] == "O" and button52["text"] == "O" and button53["text"] == "O" :
+        button50.config(bg="#80ffaa") 
+        button51.config(bg="#80ffaa") 
+        button52.config(bg="#80ffaa") 
+        button53.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button51["text"] == "O" and button52["text"] == "O" and button53["text"] == "O" and button54["text"] == "O" :
+        button51.config(bg="#80ffaa") 
+        button52.config(bg="#80ffaa") 
+        button53.config(bg="#80ffaa") 
+        button54.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button52["text"] == "O" and button53["text"] == "O" and button54["text"] == "O" and button55["text"] == "O" :
+        button52.config(bg="#80ffaa") 
+        button53.config(bg="#80ffaa") 
+        button54.config(bg="#80ffaa") 
+        button55.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button53["text"] == "O" and button54["text"] == "O" and button55["text"] == "O" and button56["text"] == "O" :
+        button53.config(bg="#80ffaa") 
+        button54.config(bg="#80ffaa") 
+        button55.config(bg="#80ffaa") 
+        button56.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button57["text"] == "O" and button58["text"] == "O" and button59["text"] == "O" and button60["text"] == "O" :
+        button57.config(bg="#80ffaa") 
+        button58.config(bg="#80ffaa") 
+        button59.config(bg="#80ffaa") 
+        button60.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button58["text"] == "O" and button59["text"] == "O" and button60["text"] == "O" and button61["text"] == "O" :
+        button58.config(bg="#80ffaa") 
+        button59.config(bg="#80ffaa") 
+        button60.config(bg="#80ffaa") 
+        button61.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button59["text"] == "O" and button60["text"] == "O" and button61["text"] == "O" and button62["text"] == "O" :
+        button59.config(bg="#80ffaa") 
+        button60.config(bg="#80ffaa") 
+        button61.config(bg="#80ffaa") 
+        button62.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button60["text"] == "O" and button61["text"] == "O" and button62["text"] == "O" and button63["text"] == "O" :
+        button60.config(bg="#80ffaa") 
+        button61.config(bg="#80ffaa") 
+        button62.config(bg="#80ffaa") 
+        button63.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button61["text"] == "O" and button62["text"] == "O" and button63["text"] == "O" and button64["text"] == "O" :
+        button61.config(bg="#80ffaa") 
+        button62.config(bg="#80ffaa") 
+        button63.config(bg="#80ffaa") 
+        button64.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button1["text"] == "O" and button9["text"] == "O" and button17["text"] == "O" and button25["text"] == "O" :
+        button1.config(bg="#80ffaa") 
+        button9.config(bg="#80ffaa") 
+        button17.config(bg="#80ffaa") 
+        button25.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button9["text"] == "O" and button17["text"] == "O" and button25["text"] == "O" and button33["text"] == "O" :
+        button9.config(bg="#80ffaa") 
+        button17.config(bg="#80ffaa") 
+        button25.config(bg="#80ffaa") 
+        button33.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button17["text"] == "O" and button25["text"] == "O" and button33["text"] == "O" and button41["text"] == "O" :
+        button17.config(bg="#80ffaa") 
+        button25.config(bg="#80ffaa") 
+        button33.config(bg="#80ffaa") 
+        button41.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button25["text"] == "O" and button33["text"] == "O" and button41["text"] == "O" and button49["text"] == "O" :
+        button25.config(bg="#80ffaa") 
+        button33.config(bg="#80ffaa") 
+        button41.config(bg="#80ffaa") 
+        button49.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button33["text"] == "O" and button41["text"] == "O" and button49["text"] == "O" and button57["text"] == "O":
+        button33.config(bg="#80ffaa") 
+        button41.config(bg="#80ffaa") 
+        button49.config(bg="#80ffaa") 
+        button57.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button2["text"] == "O" and button10["text"] == "O" and button18["text"] == "O" and button26["text"] == "O":
+        button2.config(bg="#80ffaa") 
+        button10.config(bg="#80ffaa") 
+        button18.config(bg="#80ffaa") 
+        button26.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button10["text"] == "O" and button18["text"] == "O" and button26["text"] == "O" and button34["text"] == "O":
+        button10.config(bg="#80ffaa") 
+        button18.config(bg="#80ffaa") 
+        button26.config(bg="#80ffaa") 
+        button34.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()   
+    
+    elif button18["text"] == "O" and button26["text"] == "O" and button34["text"] == "O" and button42["text"] == "O":
+        button18.config(bg="#80ffaa") 
+        button26.config(bg="#80ffaa") 
+        button34.config(bg="#80ffaa") 
+        button42.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button26["text"] == "O" and button34["text"] == "O" and button42["text"] == "O" and button50["text"] == "O":
+        button26.config(bg="#80ffaa") 
+        button34.config(bg="#80ffaa") 
+        button42.config(bg="#80ffaa") 
+        button50.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button34["text"] == "O" and button42["text"] == "O" and button50["text"] == "O" and button58["text"] == "O":
+        button34.config(bg="#80ffaa") 
+        button42.config(bg="#80ffaa") 
+        button50.config(bg="#80ffaa") 
+        button58.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()   
+    elif button3["text"] == "O" and button11["text"] == "O" and button19["text"] == "O" and button27["text"] == "O":
+        button3.config(bg="#80ffaa") 
+        button11.config(bg="#80ffaa") 
+        button19.config(bg="#80ffaa") 
+        button27.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button11["text"] == "O" and button19["text"] == "O" and button27["text"] == "O" and button35["text"] == "O":
+        button11.config(bg="#80ffaa") 
+        button19.config(bg="#80ffaa") 
+        button27.config(bg="#80ffaa") 
+        button35.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button19["text"] == "O" and button27["text"] == "O" and button35["text"] == "O" and button43["text"] == "O":
+        button19.config(bg="#80ffaa") 
+        button27.config(bg="#80ffaa") 
+        button35.config(bg="#80ffaa") 
+        button43.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()   
+    elif button27["text"] == "O" and button35["text"] == "O" and button43["text"] == "O" and button51["text"] == "O":
+        button27.config(bg="#80ffaa") 
+        button35.config(bg="#80ffaa") 
+        button43.config(bg="#80ffaa") 
+        button51.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button35["text"] == "O" and button43["text"] == "O" and button51["text"] == "O" and button59["text"] == "O":
+        button35.config(bg="#80ffaa") 
+        button43.config(bg="#80ffaa") 
+        button51.config(bg="#80ffaa") 
+        button59.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button4["text"] == "O" and button12["text"] == "O" and button20["text"] == "O" and button28["text"] == "O":
+        button4.config(bg="#80ffaa") 
+        button12.config(bg="#80ffaa") 
+        button20.config(bg="#80ffaa") 
+        button28.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()   
+
+    elif button12["text"] == "O" and button20["text"] == "O" and button28["text"] == "O" and button36["text"] == "O":
+        button12.config(bg="#80ffaa") 
+        button20.config(bg="#80ffaa") 
+        button28.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button20["text"] == "O" and button28["text"] == "O" and button36["text"] == "O" and button44["text"] == "O":
+        button20.config(bg="#80ffaa") 
+        button28.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button28["text"] == "O" and button36["text"] == "O" and button44["text"] == "O" and button52["text"] == "O":
+        button28.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa") 
+        button52.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()   
+    elif button36["text"] == "O" and button44["text"] == "O" and button52["text"] == "O" and button60["text"] == "O":
+        button36.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa") 
+        button52.config(bg="#80ffaa") 
+        button60.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button5["text"] == "O" and button13["text"] == "O" and button21["text"] == "O" and button29["text"] == "O":
+        button5.config(bg="#80ffaa") 
+        button13.config(bg="#80ffaa") 
+        button21.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button13["text"] == "O" and button21["text"] == "O" and button29["text"] == "O" and button37["text"] == "O":
+        button13.config(bg="#80ffaa") 
+        button21.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button21["text"] == "O" and button29["text"] == "O" and button37["text"] == "O" and button45["text"] == "O":
+        button21.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa") 
+        button45.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button29["text"] == "O" and button37["text"] == "O" and button45["text"] == "O" and button53["text"] == "O":
+        button29.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa") 
+        button45.config(bg="#80ffaa") 
+        button53.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons
+        start()
+    elif button6["text"] == "O" and button14["text"] == "O" and button22["text"] == "O" and button30["text"] == "O":
+        button6.config(bg="#80ffaa") 
+        button14.config(bg="#80ffaa") 
+        button22.config(bg="#80ffaa") 
+        button30.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button14["text"] == "O" and button22["text"] == "O" and button30["text"] == "O" and button38["text"] == "O":
+        button14.config(bg="#80ffaa") 
+        button22.config(bg="#80ffaa") 
+        button30.config(bg="#80ffaa") 
+        button38.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button22["text"] == "O" and button30["text"] == "O" and button38["text"] == "O" and button46["text"] == "O":
+        button22.config(bg="#80ffaa") 
+        button30.config(bg="#80ffaa") 
+        button38.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button30["text"] == "O" and button38["text"] == "O" and button46["text"] == "O" and button54["text"] == "O":
+        button30.config(bg="#80ffaa") 
+        button38.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa") 
+        button54.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button38["text"] == "O" and button46["text"] == "O" and button54["text"] == "O" and button62["text"] == "O":
+        button38.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa") 
+        button54.config(bg="#80ffaa") 
+        button62.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button7["text"] == "O" and button15["text"] == "O" and button23["text"] == "O" and button31["text"] == "O":
+        button7.config(bg="#80ffaa") 
+        button15.config(bg="#80ffaa") 
+        button23.config(bg="#80ffaa") 
+        button31.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button15["text"] == "O" and button23["text"] == "O" and button31["text"] == "O" and button39["text"] == "O":
+        button15.config(bg="#80ffaa") 
+        button23.config(bg="#80ffaa") 
+        button31.config(bg="#80ffaa") 
+        button39.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button23["text"] == "O" and button31["text"] == "O" and button39["text"] == "O" and button47["text"] == "O":
+        button23.config(bg="#80ffaa") 
+        button31.config(bg="#80ffaa") 
+        button39.config(bg="#80ffaa") 
+        button47.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button31["text"] == "O" and button39["text"] == "O" and button47["text"] == "O" and button55["text"] == "O":
+        button31.config(bg="#80ffaa") 
+        button39.config(bg="#80ffaa") 
+        button47.config(bg="#80ffaa") 
+        button55.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button39["text"] == "O" and button47["text"] == "O" and button55["text"] == "O" and button63["text"] == "O":
+        button39.config(bg="#80ffaa") 
+        button47.config(bg="#80ffaa") 
+        button55.config(bg="#80ffaa") 
+        button63.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button8["text"] == "O" and button16["text"] == "O" and button24["text"] == "O" and button32["text"] == "O":
+        button8.config(bg="#80ffaa") 
+        button16.config(bg="#80ffaa") 
+        button24.config(bg="#80ffaa") 
+        button32.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button16["text"] == "O" and button24["text"] == "O" and button32["text"] == "O" and button40["text"] == "O":
+        button16.config(bg="#80ffaa") 
+        button24.config(bg="#80ffaa") 
+        button32.config(bg="#80ffaa") 
+        button40.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button24["text"] == "O" and button32["text"] == "O" and button40["text"] == "O" and button48["text"] == "O":
+        button24.config(bg="#80ffaa") 
+        button32.config(bg="#80ffaa") 
+        button40.config(bg="#80ffaa") 
+        button48.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button32["text"] == "O" and button40["text"] == "O" and button48["text"] == "O" and button56["text"] == "O":
+        button32.config(bg="#80ffaa") 
+        button40.config(bg="#80ffaa") 
+        button48.config(bg="#80ffaa") 
+        button56.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button40["text"] == "O" and button48["text"] == "O" and button56["text"] == "O" and button64["text"] == "O":
+        button40.config(bg="#80ffaa") 
+        button48.config(bg="#80ffaa") 
+        button56.config(bg="#80ffaa") 
+        button64.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button1["text"] == "O" and button10["text"] == "O" and button19["text"] == "O" and button28["text"] == "O":
+        button1.config(bg="#80ffaa") 
+        button10.config(bg="#80ffaa") 
+        button19.config(bg="#80ffaa") 
+        button28.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button10["text"] == "O" and button19["text"] == "O" and button28["text"] == "O" and button37["text"] == "O":
+        button10.config(bg="#80ffaa") 
+        button19.config(bg="#80ffaa") 
+        button28.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button19["text"] == "O" and button28["text"] == "O" and button37["text"] == "O" and button46["text"] == "O":
+        button19.config(bg="#80ffaa") 
+        button28.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button28["text"] == "O" and button37["text"] == "O" and button46["text"] == "O" and button55["text"] == "O":
+        button28.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa") 
+        button55.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button37["text"] == "O" and button46["text"] == "O" and button55["text"] == "O" and button64["text"] == "O":
+        button37.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa") 
+        button55.config(bg="#80ffaa") 
+        button64.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button37["text"] == "O" and button46["text"] == "O" and button55["text"] == "O" and button64["text"] == "O":
+        button37.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa") 
+        button55.config(bg="#80ffaa") 
+        button64.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button2["text"] == "O" and button11["text"] == "O" and button20["text"] == "O" and button29["text"] == "O":
+        button2.config(bg="#80ffaa") 
+        button11.config(bg="#80ffaa") 
+        button20.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button11["text"] == "O" and button20["text"] == "O" and button29["text"] == "O" and button38["text"] == "O":
+        button11.config(bg="#80ffaa") 
+        button20.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa") 
+        button38.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button20["text"] == "O" and button29["text"] == "O" and button38["text"] == "O" and button47["text"] == "O":
+        button20.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa") 
+        button38.config(bg="#80ffaa") 
+        button47.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button29["text"] == "O" and button38["text"] == "O" and button47["text"] == "O" and button56["text"] == "O":
+        button29.config(bg="#80ffaa") 
+        button38.config(bg="#80ffaa") 
+        button47.config(bg="#80ffaa") 
+        button56.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button3["text"] == "O" and button12["text"] == "O" and button21["text"] == "O" and button30["text"] == "O":
+        button3.config(bg="#80ffaa") 
+        button12.config(bg="#80ffaa") 
+        button21.config(bg="#80ffaa") 
+        button30.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button12["text"] == "O" and button21["text"] == "O" and button30["text"] == "O" and button39["text"] == "O":
+        button12.config(bg="#80ffaa") 
+        button21.config(bg="#80ffaa") 
+        button30.config(bg="#80ffaa") 
+        button39.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button21["text"] == "O" and button30["text"] == "O" and button39["text"] == "O" and button48["text"] == "O":
+        button21.config(bg="#80ffaa") 
+        button30.config(bg="#80ffaa") 
+        button39.config(bg="#80ffaa") 
+        button48.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button4["text"] == "O" and button13["text"] == "O" and button22["text"] == "O" and button31["text"] == "O":
+        button4.config(bg="#80ffaa") 
+        button13.config(bg="#80ffaa") 
+        button22.config(bg="#80ffaa") 
+        button31.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button13["text"] == "O" and button22["text"] == "O" and button31["text"] == "O" and button40["text"] == "O":
+        button13.config(bg="#80ffaa") 
+        button22.config(bg="#80ffaa") 
+        button31.config(bg="#80ffaa") 
+        button40.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button5["text"] == "O" and button14["text"] == "O" and button23["text"] == "O" and button32["text"] == "O":
+        button5.config(bg="#80ffaa") 
+        button14.config(bg="#80ffaa") 
+        button23.config(bg="#80ffaa") 
+        button32.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button8["text"] == "O" and button15["text"] == "O" and button22["text"] == "O" and button29["text"] == "O":
+        button8.config(bg="#80ffaa") 
+        button15.config(bg="#80ffaa") 
+        button22.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button15["text"] == "O" and button22["text"] == "O" and button29["text"] == "O" and button36["text"] == "O":
+        button15.config(bg="#80ffaa") 
+        button22.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button22["text"] == "O" and button29["text"] == "O" and button36["text"] == "O" and button43["text"] == "O":
+        button22.config(bg="#80ffaa") 
+        button29.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa") 
+        button43.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button29["text"] == "O" and button36["text"] == "O" and button43["text"] == "O" and button50["text"] == "O":
+        button29.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa") 
+        button43.config(bg="#80ffaa") 
+        button50.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button36["text"] == "O" and button43["text"] == "O" and button50["text"] == "O" and button57["text"] == "O":
+        button36.config(bg="#80ffaa") 
+        button43.config(bg="#80ffaa") 
+        button50.config(bg="#80ffaa") 
+        button57.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button7["text"] == "O" and button14["text"] == "O" and button21["text"] == "O" and button28["text"] == "O":
+        button7.config(bg="#80ffaa") 
+        button14.config(bg="#80ffaa") 
+        button21.config(bg="#80ffaa") 
+        button28.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button14["text"] == "O" and button21["text"] == "O" and button28["text"] == "O" and button35["text"] == "O":
+        button14.config(bg="#80ffaa") 
+        button21.config(bg="#80ffaa") 
+        button28.config(bg="#80ffaa") 
+        button35.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button21["text"] == "O" and button28["text"] == "O" and button35["text"] == "O" and button42["text"] == "O":
+        button21.config(bg="#80ffaa") 
+        button28.config(bg="#80ffaa") 
+        button35.config(bg="#80ffaa") 
+        button42.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button28["text"] == "O" and button35["text"] == "O" and button42["text"] == "O" and button49["text"] == "O":
+        button28.config(bg="#80ffaa") 
+        button35.config(bg="#80ffaa") 
+        button42.config(bg="#80ffaa") 
+        button49.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button6["text"] == "O" and button13["text"] == "O" and button20["text"] == "O" and button27["text"] == "O":
+        button6.config(bg="#80ffaa") 
+        button13.config(bg="#80ffaa") 
+        button20.config(bg="#80ffaa") 
+        button27.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button13["text"] == "O" and button20["text"] == "O" and button27["text"] == "O" and button34["text"] == "O":
+        button13.config(bg="#80ffaa") 
+        button20.config(bg="#80ffaa") 
+        button27.config(bg="#80ffaa") 
+        button34.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button20["text"] == "O" and button27["text"] == "O" and button34["text"] == "O" and button41["text"] == "O":
+        button20.config(bg="#80ffaa") 
+        button27.config(bg="#80ffaa") 
+        button34.config(bg="#80ffaa") 
+        button41.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button5["text"] == "O" and button12["text"] == "O" and button19["text"] == "O" and button26["text"] == "O":
+        button5.config(bg="#80ffaa") 
+        button12.config(bg="#80ffaa") 
+        button19.config(bg="#80ffaa") 
+        button26.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button12["text"] == "O" and button19["text"] == "O" and button26["text"] == "O" and button33["text"] == "O":
+        button12.config(bg="#80ffaa") 
+        button19.config(bg="#80ffaa") 
+        button26.config(bg="#80ffaa") 
+        button33.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button4["text"] == "O" and button11["text"] == "O" and button18["text"] == "O" and button25["text"] == "O":
+        button4.config(bg="#80ffaa") 
+        button11.config(bg="#80ffaa") 
+        button18.config(bg="#80ffaa") 
+        button25.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button9["text"] == "O" and button18["text"] == "O" and button27["text"] == "O" and button36["text"] == "O":
+        button9.config(bg="#80ffaa") 
+        button18.config(bg="#80ffaa") 
+        button27.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button18["text"] == "O" and button27["text"] == "O" and button36["text"] == "O" and button45["text"] == "O":
+        button18.config(bg="#80ffaa") 
+        button27.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa") 
+        button45.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button27["text"] == "O" and button36["text"] == "O" and button45["text"] == "O" and button54["text"] == "O":
+        button27.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa") 
+        button45.config(bg="#80ffaa") 
+        button54.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button36["text"] == "O" and button45["text"] == "O" and button54["text"] == "O" and button63["text"] == "O":
+        button36.config(bg="#80ffaa") 
+        button45.config(bg="#80ffaa") 
+        button54.config(bg="#80ffaa") 
+        button63.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button17["text"] == "O" and button26["text"] == "O" and button35["text"] == "O" and button44["text"] == "O":
+        button17.config(bg="#80ffaa") 
+        button26.config(bg="#80ffaa") 
+        button35.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button26["text"] == "O" and button35["text"] == "O" and button44["text"] == "O" and button53["text"] == "O":
+        button26.config(bg="#80ffaa") 
+        button35.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa") 
+        button53.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button35["text"] == "O" and button44["text"] == "O" and button53["text"] == "O" and button62["text"] == "O":
+        button35.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa") 
+        button53.config(bg="#80ffaa") 
+        button62.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button25["text"] == "O" and button34["text"] == "O" and button43["text"] == "O" and button52["text"] == "O":
+        button25.config(bg="#80ffaa") 
+        button34.config(bg="#80ffaa") 
+        button43.config(bg="#80ffaa") 
+        button52.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button34["text"] == "O" and button43["text"] == "O" and button52["text"] == "O" and button61["text"] == "O":
+        button34.config(bg="#80ffaa") 
+        button43.config(bg="#80ffaa") 
+        button52.config(bg="#80ffaa") 
+        button61.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button16["text"] == "O" and button23["text"] == "O" and button30["text"] == "O" and button37["text"] == "O":
+        button16.config(bg="#80ffaa") 
+        button23.config(bg="#80ffaa") 
+        button30.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button23["text"] == "O" and button30["text"] == "O" and button37["text"] == "O" and button44["text"] == "O":
+        button23.config(bg="#80ffaa") 
+        button30.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button30["text"] == "O" and button37["text"] == "O" and button44["text"] == "O" and button51["text"] == "O":
+        button30.config(bg="#80ffaa") 
+        button37.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa") 
+        button51.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button37["text"] == "O" and button44["text"] == "O" and button51["text"] == "O" and button58["text"] == "O":
+        button37.config(bg="#80ffaa") 
+        button44.config(bg="#80ffaa") 
+        button51.config(bg="#80ffaa") 
+        button58.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button24["text"] == "O" and button31["text"] == "O" and button38["text"] == "O" and button45["text"] == "O":
+        button24.config(bg="#80ffaa") 
+        button31.config(bg="#80ffaa") 
+        button38.config(bg="#80ffaa") 
+        button45.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button31["text"] == "O" and button38["text"] == "O" and button45["text"] == "O" and button52["text"] == "O":
+        button31.config(bg="#80ffaa") 
+        button38.config(bg="#80ffaa") 
+        button45.config(bg="#80ffaa") 
+        button52.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button38["text"] == "O" and button45["text"] == "O" and button52["text"] == "O" and button59["text"] == "O":
+        button38.config(bg="#80ffaa") 
+        button45.config(bg="#80ffaa") 
+        button52.config(bg="#80ffaa") 
+        button59.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button32["text"] == "O" and button39["text"] == "O" and button46["text"] == "O" and button53["text"] == "O":
+        button32.config(bg="#80ffaa") 
+        button39.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa") 
+        button53.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button39["text"] == "O" and button46["text"] == "O" and button53["text"] == "O" and button60["text"] == "O":
+        button39.config(bg="#80ffaa") 
+        button46.config(bg="#80ffaa") 
+        button53.config(bg="#80ffaa") 
+        button60.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button40["text"] == "O" and button47["text"] == "O" and button54["text"] == "O" and button61["text"] == "O":
+        button40.config(bg="#80ffaa") 
+        button47.config(bg="#80ffaa") 
+        button54.config(bg="#80ffaa") 
+        button61.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+    elif button9["text"] == "O" and button18["text"] == "O" and button27["text"] == "O" and button36["text"] == "O":
+        button1.config(bg="#80ffaa") 
+        button18.config(bg="#80ffaa") 
+        button27.config(bg="#80ffaa") 
+        button36.config(bg="#80ffaa")
+        win = True
+        messagebox.showinfo("OX Game", "BOT WINNER!!")
+        disableButtons()
+        start()
+
+def find_winning_move(player_symbol):
+        winning_combinations = [
+        [button1, button2, button3, button4],
+        [button2, button3, button4, button5],
+        [button3, button4, button5, button6],
+        [button4, button5, button6, button7],
+        [button5, button6, button7, button8],
+        [button9, button10, button11, button12], 
+        [button10, button11, button12, button13],
+        [button11, button12, button13, button14],
+        [button12, button13, button14, button15],
+        [button13, button14, button15, button16],
+        [button17, button18, button19, button20], 
+        [button18, button19, button20, button21],
+        [button19, button20, button21, button22],
+        [button20, button21, button22, button23],
+        [button21, button22, button23, button24],
+        [button25, button26, button27, button28],
+        [button26, button27, button28, button29],
+        [button27, button28, button29, button30],
+        [button28, button29, button30, button31],
+        [button29, button30, button31, button32],
+        [button33, button34, button35, button36], 
+        [button34, button35, button36, button37],
+        [button35, button36, button37, button38],
+        [button36, button37, button38, button39],
+        [button37, button38, button39, button40],
+        [button41, button42, button43, button44], 
+        [button42, button43, button44, button45],
+        [button43, button44, button45, button46],
+        [button44, button45, button46, button47],
+        [button45, button46, button47, button48],
+        [button49, button50, button51, button52],
+        [button50, button51, button52, button53], 
+        [button51, button52, button53, button54],
+        [button52, button53, button54, button55],
+        [button53, button54, button55, button56],
+        [button57, button58, button59, button60], 
+        [button58, button59, button60, button61],
+        [button59, button60, button61, button62],
+        [button60, button61, button62, button63],
+        [button61, button62, button63, button64],
+        
+        [button1, button9, button17, button25], 
+        [button9, button17, button25, button33],
+        [button17, button25, button33, button41],
+        [button25, button33, button41, button49],
+        [button33, button41, button49, button57],
+        [button2, button10, button18, button26],
+        [button10, button18, button26, button34],
+        [button18, button26, button34, button42],
+        [button26, button34, button42, button50],
+        [button34, button42, button50, button58], 
+        [button3, button11, button19, button27], 
+        [button11, button19, button27, button35],
+        [button19, button27, button35, button43],
+        [button27, button35, button43, button51],
+        [button35, button43, button51, button59],
+        [button4, button12, button20, button28],
+        [button12, button20, button28, button36],
+        [button20, button28, button36, button44],
+        [button28, button36, button44, button52],
+        [button36, button44, button52, button60],
+        [button5, button13, button21, button29],
+        [button13, button21, button29, button37], 
+        [button21, button29, button37, button45],
+        [button29, button37, button45, button53],
+        [button37, button45, button53, button61],
+        [button6, button14, button22, button30], 
+        [button14, button22, button30, button38],
+        [button22, button30, button38, button46],
+        [button30, button38, button46, button54],
+        [button38, button46, button54, button62],  
+        [button7, button15, button23, button31], 
+        [button15, button23, button31, button39],
+        [button23, button31, button39, button47],
+        [button31, button39, button47, button55],
+        [button39, button47, button55, button63],
+        [button8, button16, button24, button32],
+        [button16, button24, button32, button40],
+        [button24, button32, button40, button48],
+        [button32, button40, button48, button56],
+        [button40, button48, button56, button64],
+         
+        [button1, button10, button19, button28], 
+        [button10, button19, button28, button37],
+        [button19, button28, button37, button46],
+        [button28, button37, button46, button55],
+        [button37, button46, button55, button64],
+        [button2, button11, button20, button29],
+        [button11, button20, button29, button38],
+        [button20, button29, button38, button47],
+        [button29, button38, button47, button56],
+        [button3, button12, button21, button30],
+        [button12, button21, button30, button39],
+        [button21, button30, button39, button48],
+        [button4, button13, button22, button31],
+        [button13, button22, button31, button40],
+        [button5, button14, button23, button32],
+        [button8, button15, button22, button29],
+        [button15, button22, button29, button36],
+        [button22, button29, button36, button43],
+        [button29, button36, button43, button50],
+        [button36, button43, button50, button57],
+        [button7, button14, button21, button28],
+        [button14, button21, button28, button35],
+        [button21, button28, button35, button42],
+        [button28, button35, button42, button49],
+        [button6, button13, button20, button27],
+        [button13, button20, button27, button34],
+        [button20, button27, button34, button41],
+        [button5, button12, button19, button26],
+        [button12, button19, button26, button33],
+        [button4, button11, button18, button25],
+        [button9, button18, button27, button36],
+        [button18, button27, button36, button45],
+        [button27, button36, button45, button54],
+        [button36, button45, button54, button63],
+        [button17, button26, button35, button44],
+        [button26, button35, button44, button53],
+        [button35, button44, button53, button62],
+        [button25, button34, button43, button52],
+        [button34, button43, button52, button61],
+        [button33, button42, button51, button60],
+        [button16, button23, button30, button37],
+        [button23, button30, button37, button44],
+        [button30, button37, button44, button51],
+        [button37, button44, button51, button58],
+        [button24, button31, button38, button45],
+        [button31, button38, button45, button52],
+        [button38, button45, button52, button59],
+        [button32, button39, button46, button53],
+        [button39, button46, button53, button60],
+        [button40, button47, button54, button61]
+    ]
+        for combo in winning_combinations:
+            texts = [button["text"] for button in combo]
+            if texts.count(player_symbol) == 3 and texts.count(" ") == 1:
+                return combo[texts.index(" ")]
+        return None
+def AImove():
+    global clicked, count
+
+    winning_move = find_winning_move("O")
+    if winning_move:
+        winning_move["text"] = "O"
+        clicked = True
+        count += 1
+        checkWinner()
+        checkDraw()
+        return
+
+    blocking_move = find_winning_move("X")
+    if blocking_move:
+        blocking_move["text"] = "O"
+        clicked = True
+        count += 1
+        checkWinner()
+        checkDraw()
+        return
+    
+    empty_buttons = [button for button in [button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11,button12, button13, button14, button15, button16, button17, button18, button19, button20, button21, button22, button23, button24, button25, button26, button27, button28, button29, button30, button31, button32, button33, button34, button35, button36, button37, button38, button39, button40, button41, button42, button43, button44, button45, button46, button47, button48, button49, button50, button51, button52, button53, button54, button55, button56, button57, button58, button59, button60, button61, button62, button63, button64] if button["text"] == " "]
+    if empty_buttons:
+        
+        chosen_button = random.choice(empty_buttons)
+
+        chosen_button["text"] = "O"
+        clicked = True
+        count += 1
+
+        checkWinner()
+        checkDraw()
 def checkDraw():
     global count, win
-    if count == 36 and not win:
-        messagebox.showerror("OX Game", "Hoà!!")
-        resetBoard()
+    if count == 64 and not win:
+        messagebox.showerror("OX Game", "DRAW!!")
+        start()
 
 def buttonClicked(button):
-    global clicked, count, player_vs_computer, player_turn
-    if button["text"] == " " and player_turn:  
-        if not player_vs_computer:  
-            if count % 2 == 0:
-                button["text"] = "X"
-                status_text.set("O")  
-            else:
-                button["text"] = "O"
-                status_text.set("X")
-            count += 1
-            checkWinner()
-            checkDraw()
-        else:  
-            button["text"] = "X"
-            count += 1
-            checkWinner()
-            checkDraw()
-            updateStatus()
-            if not win:
-                player_turn = False
-                root.after(500, computerMove)  
-    elif button["text"] != " ":
-        messagebox.showerror("OX Game", "Lỗi")
+    global clicked, count
+    if button["text"] == " " and clicked == True:
+        button["text"] = "X"
+        clicked = False
+        count += 1
+        checkWinner()
+        checkDraw()
+        if not win:
+            AImove()
+            
 
-def findBestMove():
-  
-    for symbol in ["O", "X"]:
-        for button in buttons:
-            if button["text"] == " ":
-                button["text"] = symbol
-                if checkPotentialWin(symbol):
-                    button["text"] = " "  
-                    return button
-                button["text"] = " "  
-    center = buttons[17]
-    if center["text"] == " ":
-        return center
-    return random.choice([button for button in buttons if button["text"] == " "])
-
-def checkPotentialWin(symbol):
-    for pattern in winning_patterns:
-        if all(button["text"] == symbol for button in pattern):
-            return True
-    return False
-
-def computerMove():
-    global count, player_turn
-    move = findBestMove()
-    move["text"] = "O"
-    count += 1
-    checkWinner()
-    checkDraw()
-    updateStatus()
-    player_turn = True  
-def updateScore():
-    score_text.set(f"X: {player1_score} | O: {player2_score}")  
-
-def resetBoard():
-    global count, clicked, win, player_turn
+def start():
+    global button1, button2, button3, button4, button5, button6, button7, button8, button9, button10, button11,button12, button13, button14, button15, button16, button17, button18, button19, button20, button21, button22, button23, button24, button25, button26, button27, button28, button29, button30, button31, button32, button33, button34, button35, button36, button37, button38, button39, button40, button41, button42, button43, button44, button45, button46, button47, button48, button49, button50, button51, button52, button53, button54, button55, button56, button57, button58, button59, button60, button61, button62, button63, button64
+    global clicked, count
     clicked = True
     count = 0
-    win = False
-    player_turn = True
-    for button in buttons:
-        button.config(text=" ", bg="SystemButtonFace", state=NORMAL)
-    updateStatus()
 
-def resetGame():
-    global player1_score, player2_score
-    player1_score = 0
-    player2_score = 0
-    updateScore()
-    resetBoard()
+    button1 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button1))
+    button2 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button2))
+    button3 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button3))
+    button4 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button4))
+    button5 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button5))
+    button6 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button6))
+    button7 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button7))
+    button8 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button8))
+    button9 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button9))
+    button10 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button10))
+    button11 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button11))
+    button12 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button12))
+    button13 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button13))
+    button14 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button14))
+    button15 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button15))
+    button16 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button16))
+    button17 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button17))
+    button18 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button18))
+    button19 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button19))
+    button20 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button20))
+    button21 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button21))
+    button22 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button22))
+    button23 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button23))
+    button24 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button24))
+    button25 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button25))
+    button26 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button26))
+    button27 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button27))
+    button28 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button28))
+    button29 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button29))
+    button30 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button30))
+    button31 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button31))
+    button32 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button32))
+    button33 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button33))
+    button34 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button34))
+    button35 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button35))
+    button36 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button36))
+    button37 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button37))
+    button38 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button38))
+    button39 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button39))
+    button40 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button40))
+    button41 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button41))
+    button42 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button42))
+    button43 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button43))
+    button44 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button44))
+    button45 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button45))
+    button46 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button46))
+    button47 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button47))
+    button48 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button48))
+    button49 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button49))
+    button50 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button50))
+    button51 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button51))
+    button52 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button52))
+    button53 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button53))
+    button54 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button54))
+    button55 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button55))
+    button56 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button56))
+    button57 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button57))
+    button58 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button58))
+    button59 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button59))
+    button60 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button60))
+    button61 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button61))
+    button62 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button62))
+    button63 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button63))
+    button64 = Button(root, text=" ", font=("Helvetica, 16"), height=3, width=7, bg="SystemButtonFace", command=lambda: buttonClicked(button64))
 
-def start(mode="two_player"):
-    global clicked, count, player_vs_computer, buttons, winning_patterns, player_turn
-    clicked = True
-    count = 0
-    player_vs_computer = (mode == "single_player")
-    player_turn = True 
-    for widget in root.winfo_children():
-        widget.destroy()
+    button1.grid(row=0, column=0)
+    button2.grid(row=0, column=1)
+    button3.grid(row=0, column=2)
+    button4.grid(row=0, column=3)
+    button5.grid(row=0, column=4)
+    button6.grid(row=0, column=5)
+    button7.grid(row=0, column=6)
+    button8.grid(row=0, column=7)
+    button9.grid(row=1, column=0)
+    button10.grid(row=1, column=1)
+    button11.grid(row=1, column=2)
+    button12.grid(row=1, column=3)
+    button13.grid(row=1, column=4)
+    button14.grid(row=1, column=5)
+    button15.grid(row=1, column=6)
+    button16.grid(row=1, column=7)
+    button17.grid(row=2, column=0)
+    button18.grid(row=2, column=1)
+    button19.grid(row=2, column=2)
+    button20.grid(row=2, column=3)
+    button21.grid(row=2, column=4)
+    button22.grid(row=2, column=5)
+    button23.grid(row=2, column=6)
+    button24.grid(row=2, column=7)
+    button25.grid(row=3, column=0)
+    button26.grid(row=3, column=1)
+    button27.grid(row=3, column=2)
+    button28.grid(row=3, column=3)
+    button29.grid(row=3, column=4)
+    button30.grid(row=3, column=5)
+    button31.grid(row=3, column=6)
+    button32.grid(row=3, column=7)
+    button33.grid(row=4, column=0)
+    button34.grid(row=4, column=1)
+    button35.grid(row=4, column=2)
+    button36.grid(row=4, column=3)
+    button37.grid(row=4, column=4)
+    button38.grid(row=4, column=5)
+    button39.grid(row=4, column=6)
+    button40.grid(row=4, column=7)
+    button41.grid(row=5, column=0)
+    button42.grid(row=5, column=1)
+    button43.grid(row=5, column=2)
+    button44.grid(row=5, column=3)
+    button45.grid(row=5, column=4)
+    button46.grid(row=5, column=5)
+    button47.grid(row=5, column=6)
+    button48.grid(row=5, column=7)
+    button49.grid(row=6, column=0)
+    button50.grid(row=6, column=1)
+    button51.grid(row=6, column=2)
+    button52.grid(row=6, column=3)
+    button53.grid(row=6, column=4)
+    button54.grid(row=6, column=5)
+    button55.grid(row=6, column=6)
+    button56.grid(row=6, column=7)
+    button57.grid(row=7, column=0)
+    button58.grid(row=7, column=1)
+    button59.grid(row=7, column=2)
+    button60.grid(row=7, column=3)
+    button61.grid(row=7, column=4)
+    button62.grid(row=7, column=5)
+    button63.grid(row=7, column=6)
+    button64.grid(row=7, column=7)
 
-    global status_text, score_text
-    status_text = StringVar()
-    score_text = StringVar()
-    updateScore()
-    updateStatus()
-    Label(root, textvariable=status_text, font=("Helvetica", 14)).grid(row=0, column=0, columnspan=6, pady=10)
-    Label(root, textvariable=score_text, font=("Helvetica", 14)).grid(row=1, column=0, columnspan=6, pady=5)
+gameMenu = Menu(root)
+root.config(menu = gameMenu)
 
-    buttons = []
-    for i in range(36):
-        button = Button(root, text=" ", font=("Helvetica", 20), height=3, width=7, bg="SystemButtonFace")
-        button.config(command=lambda b=button: buttonClicked(b)) 
-        buttons.append(button)
-    for i, button in enumerate(buttons):
-        row, col = divmod(i, 6)
-        button.grid(row=row + 2, column=col)
+optionMenu = Menu(gameMenu, tearoff=False)
+gameMenu.add_cascade(label="Options", menu=optionMenu)
+optionMenu.add_command(label="Restart Game", command=start)
 
-    winning_patterns = []
-
-    for row in range(6):
-        for col in range(2):
-            winning_patterns.append([buttons[row * 6 + col + i] for i in range(5)])
-  
-    for col in range(6):
-        for row in range(2):
-            winning_patterns.append([buttons[row * 6 + col + i * 6] for i in range(5)])
-    for row in range(2):
-        for col in range(2):
-            winning_patterns.append([buttons[(row + i) * 6 + col + i] for i in range(5)])
-
-    for row in range(2):
-        for col in range(4, 6):
-            winning_patterns.append([buttons[(row + i) * 6 + col - i] for i in range(5)])
-
-    Button(root, text="Chơi lại", font=("Helvetica", 14), command=resetBoard).grid(row=8, column=1, columnspan=2, pady=10)
-    Button(root, text="Reset điểm", font=("Helvetica", 14), command=resetGame).grid(row=8, column=3, columnspan=2, pady=10)
-
-def showModeSelection():
-    
-    for widget in root.winfo_children():
-        widget.destroy()
-    Label(root, text="Chọn chế độ", font=("Helvetica", 16)).pack(pady=10)
-    Button(root, text="Chơi với máy", font=("Helvetica", 14), command=lambda: start("single_player")).pack(pady=5)
-    Button(root, text="Chơi 2 người", font=("Helvetica", 14), command=lambda: start("two_player")).pack(pady=5)
-
-showModeSelection()
+start()
 root.mainloop()
